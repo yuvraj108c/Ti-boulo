@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ti_boulo/screens/chat/Chat.dart';
 import 'screens/Profile.dart';
 import 'screens/Home.dart';
 
@@ -12,10 +13,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.blue,
       ),
-      initialRoute: '/home',
+      initialRoute: '/chat',
       routes: {
         '/home': (context) => HomeScreen(),
         '/profile': (context) => ProfileScreen(),
+        '/chat': (context) => ChatAppScreen(),
       },
     );
   }
