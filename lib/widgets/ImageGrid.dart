@@ -20,8 +20,8 @@ class ImageGrid extends StatelessWidget {
       )),
       staggeredTileBuilder: (int index) =>
           new StaggeredTile.count(2, index.isEven ? 2 : 1),
-      mainAxisSpacing: 4.0,
-      crossAxisSpacing: 4.0,
+      mainAxisSpacing: 8.0,
+      crossAxisSpacing: 8.0,
     );
   }
 }
