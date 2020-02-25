@@ -14,13 +14,15 @@ class MyDrawer extends StatelessWidget {
         ListTile(
           title: Text('Home'),
           onTap: () {
-            Navigator.popAndPushNamed(context, '/home');
+            Navigator.pop(context);
+            Navigator.pushReplacementNamed(context, '/home');
           },
         ),
         ListTile(
           title: Text('Profile'),
           onTap: () {
-            Navigator.popAndPushNamed(context, '/profile');
+            Navigator.pop(context);
+            Navigator.pushNamed(context, '/profile');
           },
         ),
       ]),

@@ -8,9 +8,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Components Library',
+      title: 'Ti Boulo',
       theme: ThemeData(
-        primaryColor: Colors.blue,
+        primaryColor: Colors.white,
       ),
       initialRoute: '/home',
       routes: {
