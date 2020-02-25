@@ -21,7 +21,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: MyAppBar(title: "Profile"),
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.symmetric(vertical: 25.0, horizontal: sWidth / 9),
+          margin: EdgeInsets.symmetric(vertical: 35.0, horizontal: sWidth / 9),
           child: Column(
             children: [
               Row(
