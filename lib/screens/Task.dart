@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tagging/flutter_tagging.dart';
 import 'package:google_map_location_picker/google_map_location_picker.dart';
 import 'package:ti_boulo/models/task.dart';
+import 'package:ti_boulo/screens/utils/Validator.dart';
 import 'package:ti_boulo/widgets/MyAppBar.dart';
 import 'package:ti_boulo/widgets/MyDrawer.dart';
 import 'package:date_range_picker/date_range_picker.dart' as DateRagePicker;
@@ -59,27 +60,33 @@ class StepperBody extends StatefulWidget {
 }
 
 class _StepperBodyState extends State<StepperBody> {
+  GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   int currStep = 0;
   static var _fnTitle = new FocusNode(); // Focus Node
   static var _fnDescription = new FocusNode();
-  GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   static MyData data = new MyData();
   static Task newTask = new Task();
   static List<bool> selectedLocation = [true, false];
   static bool locationChosen = false, dateChosen = false;
+  final _titleController = TextEditingController();
+  final _descriptionController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    _fnTitle.addListener(() {
-      setState(() {});
-      print('Has focus: $_fnTitle.hasFocus');
+    _titleController.addListener(() {
+      newTask.title = _titleController.text;
+    });
+    _descriptionController.addListener((){
+      newTask.description = _descriptionController.text;
     });
   }
 
   @override
   void dispose() {
     _fnTitle.dispose();
+    _titleController.dispose();
+    _descriptionController.dispose();
     super.dispose();
   }
 
@@ -94,16 +101,15 @@ class _StepperBodyState extends State<StepperBody> {
     void _submitDetails() {
       final FormState formState = _formKey.currentState;
 
-      // print(newTask.toString());
+      print(newTask.title);
+      print(newTask.description);
+      print(newTask.toString());
 
       if (!formState.validate()) {
+        // TODO: Add missing validations: date and location etc
         showSnackBarMessage('Please enter correct data');
       } else {
         formState.save();
-        print("Name: ${data.name}");
-        print("Phone: ${data.phone}");
-        print("Email: ${data.email}");
-        print("Age: ${data.age}");
 
         showDialog(
             context: context,
@@ -111,14 +117,7 @@ class _StepperBodyState extends State<StepperBody> {
               title: new Text("Details"),
               //content: new Text("Hello World"),
               content: new SingleChildScrollView(
-                child: new ListBody(
-                  children: <Widget>[
-                    new Text("Name : " + data.name),
-                    new Text("Phone : " + data.phone),
-                    new Text("Email : " + data.email),
-                    new Text("Age : " + data.age),
-                  ],
-                ),
+                child: new Text(newTask.toString()),
               ),
               actions: <Widget>[
                 new FlatButton(
@@ -154,19 +153,14 @@ class _StepperBodyState extends State<StepperBody> {
                       newTask.title = value;
                     },
                     maxLines: 1,
-                    //initialValue: 'Aseem Wangoo',
-                    validator: (value) {
-                      if (value.isEmpty || value.length < 1) {
-                        return 'Please enter a title';
-                      } else {
-                        return "";
-                      }
-                    },
+                    validator: (value) =>
+                        Validator.emptyValidator("Title", value),
                     decoration: new InputDecoration(
                         labelText: 'Title',
                         hintText: 'Title of the Task',
                         labelStyle: new TextStyle(
                             decorationStyle: TextDecorationStyle.solid)),
+                            controller: _titleController,
                   ),
                   new TextFormField(
                     // Details
@@ -178,11 +172,7 @@ class _StepperBodyState extends State<StepperBody> {
                     },
                     minLines: 3,
                     maxLines: 5,
-                    validator: (value) {
-                      return (value.isEmpty || value.length < 1)
-                          ? 'Please enter a description of the Task'
-                          : "";
-                    },
+                    validator: (value) => Validator.emptyValidator("Description ", value),
                     decoration: new InputDecoration(
                         labelText: 'Description',
                         hintText:
@@ -190,6 +180,7 @@ class _StepperBodyState extends State<StepperBody> {
                         //filled: true,
                         labelStyle: new TextStyle(
                             decorationStyle: TextDecorationStyle.solid)),
+                            controller: _descriptionController,
                   )
                 ],
               ),
@@ -354,35 +345,22 @@ class _StepperBodyState extends State<StepperBody> {
           ],
           type: StepperType.vertical,
           currentStep: this.currStep,
-          // onStepContinue: () {
-          //   setState(() {
-          //     if (currStep < 4 - 1) {
-          //       currStep = currStep + 1;
-          //     } else {
-          //       currStep = 0;
-          //     }
-          //     // else {
-          //     // Scaffold
-          //     //     .of(context)
-          //     //     .showSnackBar(new SnackBar(content: new Text('$currStep')));
-
-          //     // if (currStep == 1) {
-          //     //   print('First Step');
-          //     //   print('object' + FocusScope.of(context).toStringDeep());
-          //     // }
-
-          //     // }
-          //   });
-          // },
-          // onStepCancel: () {
-          //   setState(() {
-          //     if (currStep > 0) {
-          //       currStep = currStep - 1;
-          //     } else {
-          //       currStep = 0;
-          //     }
-          //   });
-          // },
+          onStepContinue: () {
+            setState(() {
+              if (currStep < 4 - 1) {
+                currStep = currStep + 1;
+              }
+            });
+          },
+          onStepCancel: () {
+            setState(() {
+              if (currStep > 0) {
+                currStep = currStep - 1;
+              } else {
+                currStep = 0;
+              }
+            });
+          },
           onStepTapped: (step) {
             setState(() {
               currStep = step;

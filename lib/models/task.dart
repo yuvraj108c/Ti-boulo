@@ -40,12 +40,12 @@ class Task {
 
   @override
   String toString() {
-    String s;
-    s += "Title: " + title ?? "" +"\n";
-    s += "Description: " + description ?? "" +"\n";
-    s += "Categories: " + stringifyCategories() +"\n";
-    s += "Date: " + stringifyDate() +"\n";
-    s += "location: " + stringifyLocation() +"\n";
+    String s = "";
+    s += "Title: ${title ?? ""} \n";
+    s += "Description: ${description ?? ""} \n";
+    s += "Categories: ${stringifyCategories()} \n";
+    s += "Date: ${stringifyDate()} \n";
+    s += "location: ${stringifyLocation()} \n";
     return s;
   }
 
