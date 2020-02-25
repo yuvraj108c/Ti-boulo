@@ -18,7 +18,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: MyAppBar(title: "Profile"),
+      appBar: MyAppBar(title: "Profile", actions: <Widget>[
+        IconButton(icon: Icon(Icons.edit), onPressed: () {})
+      ]),
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.symmetric(vertical: 35.0, horizontal: sWidth / 9),

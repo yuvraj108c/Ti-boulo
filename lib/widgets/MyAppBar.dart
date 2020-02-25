@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyAppBar extends AppBar {
-  MyAppBar({Key key, String title})
+  MyAppBar({Key key, String title, List<Widget> actions})
       : super(
             key: key,
             title: Text(
@@ -10,5 +10,6 @@ class MyAppBar extends AppBar {
             ),
             centerTitle: true,
             elevation: 0.0,
-            backgroundColor: Colors.white);
+            backgroundColor: Colors.white,
+            actions: actions);
 }
