@@ -36,7 +36,8 @@ List<Map> ktasks = [
         "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
     'date': "12/12/2020",
     'location': "Reduit",
-    'imageUrl': "https://picsum.photos/250?image=9",
+    'imageUrl':
+        "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
     'price': 1200,
     'tags': ["construction", "manual"],
   },
@@ -46,7 +47,8 @@ List<Map> ktasks = [
         "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
     'date': "12/12/2020",
     'location': "Reduit",
-    'imageUrl': "https://picsum.photos/250?image=9",
+    'imageUrl':
+        "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
     'price': 1200,
     'tags': ["construction", "manual"],
   },
@@ -56,7 +58,8 @@ List<Map> ktasks = [
         "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
     'date': "12/12/2020",
     'location': "Reduit",
-    'imageUrl': "https://picsum.photos/250?image=9",
+    'imageUrl':
+        "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
     'price': 1200,
     'tags': ["construction", "manual"],
   },
@@ -66,7 +69,8 @@ List<Map> ktasks = [
         "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
     'date': "12/12/2020",
     'location': "Reduit",
-    'imageUrl': "https://picsum.photos/250?image=9",
+    'imageUrl':
+        "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
     'price': 1200,
     'tags': ["construction", "manual"],
   }
