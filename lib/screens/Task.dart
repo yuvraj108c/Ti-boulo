@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tagging/flutter_tagging.dart';
 import 'package:google_map_location_picker/google_map_location_picker.dart';
 import 'package:ti_boulo/models/task.dart';
-import 'package:ti_boulo/screens/utils/Validator.dart';
+import 'package:ti_boulo/utils/Validator.dart';
 import 'package:ti_boulo/widgets/MyAppBar.dart';
 import 'package:ti_boulo/widgets/MyDrawer.dart';
 import 'package:date_range_picker/date_range_picker.dart' as DateRagePicker;
@@ -77,7 +77,7 @@ class _StepperBodyState extends State<StepperBody> {
     _titleController.addListener(() {
       newTask.title = _titleController.text;
     });
-    _descriptionController.addListener((){
+    _descriptionController.addListener(() {
       newTask.description = _descriptionController.text;
     });
   }
@@ -101,14 +101,13 @@ class _StepperBodyState extends State<StepperBody> {
     void _submitDetails() {
       final FormState formState = _formKey.currentState;
 
-      print(newTask.title);
-      print(newTask.description);
-      print(newTask.toString());
-
       if (!formState.validate()) {
         // TODO: Add missing validations: date and location etc
         showSnackBarMessage('Please enter correct data');
       } else {
+        print(newTask.title);
+        print(newTask.description);
+        print(newTask.toString());
         formState.save();
 
         showDialog(
@@ -160,7 +159,7 @@ class _StepperBodyState extends State<StepperBody> {
                         hintText: 'Title of the Task',
                         labelStyle: new TextStyle(
                             decorationStyle: TextDecorationStyle.solid)),
-                            controller: _titleController,
+                    controller: _titleController,
                   ),
                   new TextFormField(
                     // Details
@@ -172,7 +171,8 @@ class _StepperBodyState extends State<StepperBody> {
                     },
                     minLines: 3,
                     maxLines: 5,
-                    validator: (value) => Validator.emptyValidator("Description ", value),
+                    validator: (value) =>
+                        Validator.emptyValidator("Description ", value),
                     decoration: new InputDecoration(
                         labelText: 'Description',
                         hintText:
@@ -180,7 +180,7 @@ class _StepperBodyState extends State<StepperBody> {
                         //filled: true,
                         labelStyle: new TextStyle(
                             decorationStyle: TextDecorationStyle.solid)),
-                            controller: _descriptionController,
+                    controller: _descriptionController,
                   )
                 ],
               ),
