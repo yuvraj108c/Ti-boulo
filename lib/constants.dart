@@ -6,12 +6,29 @@ import 'package:ti_boulo/widgets/TaskItem.dart';
 // Colors
 const kMainColor = Color(0xFF6c63ff);
 const kMainColor2 = Color(0xFFFFD88D);
+const kMainBackgroundColor = Color(0xFFE9EAEF);
 
 // Styles
 const kSubtitleStyle = TextStyle(
   fontSize: 17,
   color: Colors.black54,
 );
+
+// Location API Key
+const APIKEY = "AIzaSyAxiXZvMz-x1SEPcvVQntd7Xkzhf80aC74";
+
+generateTagsFromStrings(List<String> t) { // TODO: Move to lib/util
+  var tags = <Tag>[];
+  t.forEach((i) {
+    var tag = new Tag(
+      color: kMainColor,
+      title: i,
+    );
+    tags.add(tag);
+  });
+  return tags;
+}
+
 
 // Profile
 final String about = "Wall painter";
@@ -91,18 +108,6 @@ generateTilesFromExperience(List<String> t) {
     ));
   });
   return experiences;
-}
-
-generateTagsFromStrings(List<String> t) {
-  var tags = <Tag>[];
-  t.forEach((i) {
-    var tag = new Tag(
-      color: kMainColor,
-      title: i,
-    );
-    tags.add(tag);
-  });
-  return tags;
 }
 
 generateTaskTiles(List<Map> t) {
