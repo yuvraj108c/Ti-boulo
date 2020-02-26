@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ti_boulo/constants.dart';
+import 'package:ti_boulo/widgets/PriceTag.dart';
 
 class TaskItem extends StatelessWidget {
   final String imageUrl;
@@ -25,59 +26,59 @@ class TaskItem extends StatelessWidget {
     final iSize = 15.0;
 
     return Card(
-      elevation: 5.0,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
-        height: height,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(this.title, style: Theme.of(context).textTheme.title),
-            Text(
-              this.description,
-              overflow: TextOverflow.ellipsis,
-              maxLines: 2,
-              style: Theme.of(context).textTheme.body1,
-            ),
-            Row(
-              children: generateTagsFromStrings(this.tags),
-            ),
-            Row(
+      margin: EdgeInsets.only(bottom: 20.0),
+      elevation: 1.5,
+      child: Column(
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+            height: height,
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    Icon(
-                      Icons.calendar_today,
-                      color: kMainColor,
-                      size: iSize,
-                    ),
-                    Text(" " + this.date),
-                  ],
+                Text(this.title, style: Theme.of(context).textTheme.title),
+                Text(
+                  this.description,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2,
+                  style: Theme.of(context).textTheme.body1,
                 ),
                 Row(
+                  children: generateTagsFromStrings(this.tags),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Icon(
-                      Icons.location_on,
-                      color: kMainColor,
-                      size: iSize,
+                    Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.calendar_today,
+                          color: kMainColor,
+                          size: iSize,
+                        ),
+                        Text(" " + this.date),
+                      ],
                     ),
-                    Text(" " + this.location),
+                    Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.location_on,
+                          color: kMainColor,
+                          size: iSize,
+                        ),
+                        Text(" " + this.location),
+                      ],
+                    ),
+                    PriceTag(
+                      price: price.toString(),
+                    ),
                   ],
                 ),
-                Container(
-                  padding: EdgeInsets.all(6),
-                  child: Text(
-                    "Rs " + this.price.toString(),
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  decoration: BoxDecoration(color: kMainColor),
-                )
               ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
