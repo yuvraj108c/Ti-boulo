@@ -39,7 +39,10 @@ class MyDrawer extends StatelessWidget {
           _createDrawerItem(icon: Icons.chat, text: 'Chat'), // List of chats
           Divider(),
           _createDrawerItem(
-              icon: Icons.stars, text: 'Intro'), // Introduction Screen
+              icon: Icons.stars, text: 'Intro',
+            onTap: () =>
+                Navigator.pushNamed(context, Routes.intro)
+            ), // Introduction Screen
           _createDrawerItem(
               icon: Icons.settings, text: 'Settings'), // App Settings
           Divider(),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ti_boulo/routes.dart';
+import 'package:ti_boulo/screens/Intro.dart';
 import 'package:ti_boulo/screens/Task.dart';
 import 'screens/Profile.dart';
 import 'screens/Home.dart';
@@ -15,12 +16,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.white,
       ),
-      initialRoute: '/home',
+      initialRoute: '/intro',
       routes: {
         Routes.home: (context) => HomeScreen(),
         Routes.profile: (context) => ProfileScreen(),
         Routes.task: (context) => TaskScreen(),
         Routes.viewTask: (context) => ViewTaskScreen(),
+        Routes.intro: (context) => IntroScreen(),
       },
     );
   }
