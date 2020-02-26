@@ -43,13 +43,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.4.0"
-  auto_size_text:
-    dependency: transitive
-    description:
-      name: auto_size_text
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.1.0"
   boolean_selector:
     dependency: transitive
     description:
@@ -57,13 +50,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
-  card_settings:
-    dependency: "direct main"
-    description:
-      name: card_settings
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.6.1"
   charcode:
     dependency: transitive
     description:
@@ -132,39 +118,11 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_colorpicker:
-    dependency: transitive
-    description:
-      name: flutter_colorpicker
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.6"
-  flutter_cupertino_settings:
-    dependency: transitive
-    description:
-      name: flutter_cupertino_settings
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.3.0"
   flutter_localizations:
     dependency: transitive
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_masked_text:
-    dependency: transitive
-    description:
-      name: flutter_masked_text
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.8.0"
-  flutter_material_pickers:
-    dependency: transitive
-    description:
-      name: flutter_material_pickers
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.2.0"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -172,6 +130,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.6"
+  flutter_staggered_grid_view:
+    dependency: "direct main"
+    description:
+      name: flutter_staggered_grid_view
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.0"
   flutter_tagging:
     dependency: "direct main"
     description:
@@ -198,6 +163,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.3.0"
+  getflutter:
+    dependency: "direct main"
+    description:
+      name: getflutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.8"
   glob:
     dependency: transitive
     description:

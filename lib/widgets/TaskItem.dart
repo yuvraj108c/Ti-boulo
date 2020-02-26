@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ti_boulo/constant.dart';
+import 'package:ti_boulo/constants.dart';
+import 'package:ti_boulo/widgets/PriceTag.dart';
 
 class TaskItem extends StatelessWidget {
   final String imageUrl;
@@ -21,25 +22,17 @@ class TaskItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final margin = 15.0;
-    final width = MediaQuery.of(context).size.width - 2 * margin;
     final height = 150.0;
     final iSize = 15.0;
 
     return Card(
-      elevation: 15.0,
-      margin: EdgeInsets.all(margin),
-      child: Row(
+      margin: EdgeInsets.only(bottom: 20.0),
+      elevation: 1.5,
+      child: Column(
         children: <Widget>[
           Container(
+            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
             height: height,
-            width: width * 1.2 / 4,
-            child: Image.network(this.imageUrl, fit: BoxFit.fill),
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-            height: height,
-            width: (width * 2.8) / 4,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -77,14 +70,9 @@ class TaskItem extends StatelessWidget {
                         Text(" " + this.location),
                       ],
                     ),
-                    Container(
-                      padding: EdgeInsets.all(6),
-                      child: Text(
-                        "Rs " + this.price.toString(),
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      decoration: BoxDecoration(color: kMainColor),
-                    )
+                    PriceTag(
+                      price: price.toString(),
+                    ),
                   ],
                 ),
               ],
