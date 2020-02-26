@@ -21,21 +21,21 @@ class Task {
   String stringifyDate() {
     var formatter = new DateFormat('dd MMMM yyyy');
     String start = formatter.format(startDate);
-    if(endDate == null){
-      return "On "+start;
+    if (endDate == null) {
+      return "On " + start;
     }
     String end = formatter.format(endDate);
-    return "From " + start +"\nto " + end;
+    return "From " + start + "\nto " + end;
   }
 
   String stringifyCategories() {
-      var concatenate = StringBuffer();
+    var concatenate = StringBuffer();
 
-      categories.forEach((item){
-        concatenate.write(item.toString());
-      });
+    categories.forEach((item) {
+      concatenate.write(item.toString());
+    });
 
-      return concatenate.toString();
+    return concatenate.toString();
   }
 
   @override
@@ -48,7 +48,6 @@ class Task {
     s += "location: ${stringifyLocation()} \n";
     return s;
   }
-
 }
 
 /// Language Class

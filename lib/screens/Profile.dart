@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:getflutter/getflutter.dart';
 import 'package:ti_boulo/constants.dart';
+import 'package:ti_boulo/utils/functions.dart';
 import 'package:ti_boulo/widgets/ImageGrid.dart';
 import 'package:ti_boulo/widgets/MyAppBar.dart';
-import 'package:ti_boulo/widgets/MyDrawer.dart';
 
 class ProfileScreen extends StatefulWidget {
   ProfileScreen({Key key}) : super(key: key);
@@ -23,7 +23,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
         title: "Profile",
         actions: <Widget>[IconButton(icon: Icon(Icons.edit), onPressed: () {})],
       ),
-      drawer: MyDrawer(),
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: sWidth / 14),

@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:getflutter/components/list_tile/gf_list_tile.dart';
-import 'package:ti_boulo/widgets/Tag.dart';
-import 'package:ti_boulo/widgets/TaskItem.dart';
 
 // Colors
 const kMainColor = Color(0xFF6c63ff);
@@ -16,19 +13,6 @@ const kSubtitleStyle = TextStyle(
 
 // Location API Key
 const APIKEY = "AIzaSyAxiXZvMz-x1SEPcvVQntd7Xkzhf80aC74";
-
-generateTagsFromStrings(List<String> t) { // TODO: Move to lib/util
-  var tags = <Tag>[];
-  t.forEach((i) {
-    var tag = new Tag(
-      color: kMainColor,
-      title: i,
-    );
-    tags.add(tag);
-  });
-  return tags;
-}
-
 
 // Profile
 final String about = "Wall painter";
@@ -92,36 +76,3 @@ List<Map> ktasks = [
     'tags': ["construction", "manual"],
   }
 ];
-
-// utils
-generateTilesFromExperience(List<String> t) {
-  var experiences = <Widget>[];
-  t.forEach((i) {
-    var exp = new GFListTile(
-      color: Color(0xFFe5e5e5),
-      description: Text(i),
-      icon: Icon(Icons.keyboard_arrow_right, size: 30.0),
-    );
-    experiences.add(exp);
-    experiences.add(SizedBox(
-      height: 10.0,
-    ));
-  });
-  return experiences;
-}
-
-generateTaskTiles(List<Map> t) {
-  var tasks = <TaskItem>[];
-  t.forEach((i) {
-    var task = new TaskItem(
-      title: i["title"],
-      description: i["description"],
-      date: i["date"],
-      price: i["price"],
-      location: i["location"],
-      tags: i["tags"],
-    );
-    tasks.add(task);
-  });
-  return tasks;
-}

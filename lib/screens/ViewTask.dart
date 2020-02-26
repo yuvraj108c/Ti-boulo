@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:getflutter/components/image/gf_image_overlay.dart';
 import 'package:getflutter/components/typography/gf_typography.dart';
 import 'package:getflutter/getflutter.dart';
+import 'package:ti_boulo/utils/functions.dart';
 import 'package:ti_boulo/widgets/MyAppBar.dart';
 import 'package:ti_boulo/widgets/PriceTag.dart';
 import '../constants.dart';

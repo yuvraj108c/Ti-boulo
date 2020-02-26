@@ -13,19 +13,25 @@ class MyDrawer extends StatelessWidget {
           _createDrawerItem(
               icon: Icons.home,
               text: 'Home',
-              onTap: () =>
-                  Navigator.pushReplacementNamed(context, Routes.home)),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushReplacementNamed(context, Routes.home);
+              }),
           _createDrawerItem(
               icon: Icons.edit,
               text: 'My Profile',
-              onTap: () =>
-                  Navigator.pushNamed(context, Routes.profile)),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, Routes.profile);
+              }),
           Divider(),
           _createDrawerItem(
               icon: Icons.add,
               text: 'Create Task',
-              onTap: () =>
-                  Navigator.pushNamed(context, Routes.task)),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, Routes.task);
+              }),
           _createDrawerItem(
             // Tasks created by the current user
             icon: Icons.list,
@@ -35,14 +41,26 @@ class MyDrawer extends StatelessWidget {
           ),
           Divider(),
           _createDrawerItem(
+              // Tasks created by the current user
+              icon: Icons.album,
+              text: 'View Task',
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, Routes.viewTask);
+              }),
+          Divider(),
+          _createDrawerItem(
               icon: Icons.face, text: 'Freelancers'), // List of freelancers
           _createDrawerItem(icon: Icons.chat, text: 'Chat'), // List of chats
           Divider(),
           _createDrawerItem(
-              icon: Icons.stars, text: 'Intro',
-            onTap: () =>
-                Navigator.pushNamed(context, Routes.intro)
-            ), // Introduction Screen
+              icon: Icons.stars,
+              text: 'Intro',
+              onTap: () {
+                Navigator.pushNamed(
+                    context, Routes.intro); // Introduction Screen
+              }),
+
           _createDrawerItem(
               icon: Icons.settings, text: 'Settings'), // App Settings
           Divider(),

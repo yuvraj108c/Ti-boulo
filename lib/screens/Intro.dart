@@ -18,19 +18,19 @@ class IntroScreen extends StatelessWidget {
         PageViewModel(
           title: "Work",
           body: "Get paid for your valuable skills by working on projects.",
-          image: Image.asset('assets/painter.png'),
+          image: Image.asset('assets/images/painter.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Hire",
           body: "Hire freelancers to work on your projects.",
-          image: Image.asset('assets/hire.png'),
+          image: Image.asset('assets/images/hire.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Manage",
           body: "Manage the money you earn.",
-          image: Image.asset('assets/manage.png'),
+          image: Image.asset('assets/images/manage.png'),
           decoration: pageDecoration,
         ),
       ],

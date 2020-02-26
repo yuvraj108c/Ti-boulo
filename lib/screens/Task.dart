@@ -4,7 +4,6 @@ import 'package:google_map_location_picker/google_map_location_picker.dart';
 import 'package:ti_boulo/models/task.dart';
 import 'package:ti_boulo/utils/Validator.dart';
 import 'package:ti_boulo/widgets/MyAppBar.dart';
-import 'package:ti_boulo/widgets/MyDrawer.dart';
 import 'package:date_range_picker/date_range_picker.dart' as DateRagePicker;
 
 import '../constants.dart';
@@ -20,11 +19,10 @@ class _TaskScreenState extends State<TaskScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(title: "Task"),
+      appBar: MyAppBar(title: " Create task"),
       body: Center(
         child: CreateTask(),
       ),
-      drawer: MyDrawer(),
       // floatingActionButton: new FloatingActionButton.extended(
       //     onPressed: null, label: new Text("Save"), icon: Icon(Icons.save))
     );
