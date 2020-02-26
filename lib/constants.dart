@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getflutter/components/list_tile/gf_list_tile.dart';
 import 'package:ti_boulo/widgets/Tag.dart';
+import 'package:ti_boulo/widgets/TaskItem.dart';
 
 // Colors
 const kMainColor = Color(0xFF6c63ff);
@@ -29,6 +30,36 @@ final List<String> images = [
 
 // Task
 List<Map> ktasks = [
+  {
+    'title': "Wall Painting",
+    'description':
+        "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
+    'date': "12/12/2020",
+    'location': "Reduit",
+    'imageUrl': "https://picsum.photos/250?image=9",
+    'price': 1200,
+    'tags': ["construction", "manual"],
+  },
+  {
+    'title': "Wall Painting",
+    'description':
+        "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
+    'date': "12/12/2020",
+    'location': "Reduit",
+    'imageUrl': "https://picsum.photos/250?image=9",
+    'price': 1200,
+    'tags': ["construction", "manual"],
+  },
+  {
+    'title': "Wall Painting",
+    'description':
+        "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
+    'date': "12/12/2020",
+    'location': "Reduit",
+    'imageUrl': "https://picsum.photos/250?image=9",
+    'price': 1200,
+    'tags': ["construction", "manual"],
+  },
   {
     'title': "Wall Painting",
     'description':
@@ -68,4 +99,20 @@ generateTagsFromStrings(List<String> t) {
     tags.add(tag);
   });
   return tags;
+}
+
+generateTaskTiles(List<Map> t) {
+  var tasks = <TaskItem>[];
+  t.forEach((i) {
+    var task = new TaskItem(
+      title: i["title"],
+      description: i["description"],
+      date: i["date"],
+      price: i["price"],
+      location: i["location"],
+      tags: i["tags"],
+    );
+    tasks.add(task);
+  });
+  return tasks;
 }

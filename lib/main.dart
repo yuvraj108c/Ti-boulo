@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.white,
       ),
-      initialRoute: '/viewTask',
+      initialRoute: '/home',
       routes: {
         '/home': (context) => HomeScreen(),
         '/profile': (context) => ProfileScreen(),

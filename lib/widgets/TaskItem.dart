@@ -21,76 +21,63 @@ class TaskItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final margin = 15.0;
-    final width = MediaQuery.of(context).size.width - 2 * margin;
     final height = 150.0;
     final iSize = 15.0;
 
     return Card(
-      elevation: 15.0,
-      margin: EdgeInsets.all(margin),
-      child: Row(
-        children: <Widget>[
-          Container(
-            height: height,
-            width: width * 1.2 / 4,
-            child: Image.network(this.imageUrl, fit: BoxFit.fill),
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-            height: height,
-            width: (width * 2.8) / 4,
-            child: Column(
+      elevation: 5.0,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+        height: height,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(this.title, style: Theme.of(context).textTheme.title),
+            Text(
+              this.description,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
+              style: Theme.of(context).textTheme.body1,
+            ),
+            Row(
+              children: generateTagsFromStrings(this.tags),
+            ),
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(this.title, style: Theme.of(context).textTheme.title),
-                Text(
-                  this.description,
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 2,
-                  style: Theme.of(context).textTheme.body1,
-                ),
                 Row(
-                  children: generateTagsFromStrings(this.tags),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Row(
-                      children: <Widget>[
-                        Icon(
-                          Icons.calendar_today,
-                          color: kMainColor,
-                          size: iSize,
-                        ),
-                        Text(" " + this.date),
-                      ],
+                    Icon(
+                      Icons.calendar_today,
+                      color: kMainColor,
+                      size: iSize,
                     ),
-                    Row(
-                      children: <Widget>[
-                        Icon(
-                          Icons.location_on,
-                          color: kMainColor,
-                          size: iSize,
-                        ),
-                        Text(" " + this.location),
-                      ],
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(6),
-                      child: Text(
-                        "Rs " + this.price.toString(),
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      decoration: BoxDecoration(color: kMainColor),
-                    )
+                    Text(" " + this.date),
                   ],
                 ),
+                Row(
+                  children: <Widget>[
+                    Icon(
+                      Icons.location_on,
+                      color: kMainColor,
+                      size: iSize,
+                    ),
+                    Text(" " + this.location),
+                  ],
+                ),
+                Container(
+                  padding: EdgeInsets.all(6),
+                  child: Text(
+                    "Rs " + this.price.toString(),
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  decoration: BoxDecoration(color: kMainColor),
+                )
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
