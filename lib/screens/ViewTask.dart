@@ -3,7 +3,6 @@ import 'package:getflutter/components/image/gf_image_overlay.dart';
 import 'package:getflutter/components/typography/gf_typography.dart';
 import 'package:getflutter/getflutter.dart';
 import 'package:ti_boulo/widgets/MyAppBar.dart';
-import 'package:ti_boulo/widgets/MyDrawer.dart';
 import '../constants.dart';
 
 class ViewTaskScreen extends StatefulWidget {
@@ -25,7 +24,6 @@ class _ViewTaskScreenState extends State<ViewTaskScreen> {
       appBar: MyAppBar(
         title: "Task details",
       ),
-      drawer: MyDrawer(),
       body: Container(
         margin: EdgeInsets.symmetric(vertical: 35.0, horizontal: sWidth / 9),
         child: Column(

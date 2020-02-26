@@ -25,6 +25,13 @@ class MyDrawer extends StatelessWidget {
             Navigator.pushNamed(context, '/profile');
           },
         ),
+        ListTile(
+          title: Text('View Task'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.pushNamed(context, '/viewTask');
+          },
+        ),
       ]),
     );
   }
