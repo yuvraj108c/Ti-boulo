@@ -46,7 +46,7 @@ generateTilesFromExperience(List<String> t) {
   var experiences = <Widget>[];
   t.forEach((i) {
     var exp = new GFListTile(
-      color: Color(0xFFf7f7f7),
+      color: Color(0xFFe5e5e5),
       description: Text(i),
       icon: Icon(Icons.keyboard_arrow_right, size: 30.0),
     );

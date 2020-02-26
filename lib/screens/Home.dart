@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ti_boulo/constant.dart';
 import 'package:ti_boulo/widgets/MyAppBar.dart';
 import 'package:ti_boulo/widgets/MyDrawer.dart';
 import 'package:ti_boulo/widgets/TaskItem.dart';
@@ -19,7 +18,6 @@ class _HomeScreenState extends State<HomeScreen> {
         title: "Home",
       ),
       drawer: MyDrawer(),
-      backgroundColor: kMainBackgroundColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[

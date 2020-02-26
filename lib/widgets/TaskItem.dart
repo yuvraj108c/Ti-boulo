@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ti_boulo/constant.dart';
+import 'package:ti_boulo/constants.dart';
 
 class TaskItem extends StatelessWidget {
   final String imageUrl;
