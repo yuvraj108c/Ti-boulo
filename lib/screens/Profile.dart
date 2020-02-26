@@ -24,7 +24,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.symmetric(vertical: 35.0, horizontal: sWidth / 9),
+          margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: sWidth / 14),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -33,17 +33,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 children: <Widget>[
                   GFImageOverlay(
                     borderRadius: BorderRadius.circular(75),
-                    height: 150,
-                    width: 150,
+                    height: 125,
+                    width: 125,
                     image: NetworkImage(imageUrl),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 25.0),
+                    margin: EdgeInsets.only(left: 15.0),
                     height: 150,
                     child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
                           name,
@@ -51,47 +50,50 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               fontSize: 30, fontWeight: FontWeight.w500),
                         ),
                         Text(about, style: kSubtitleStyle),
-                        Row(
-                          children: <Widget>[
-                            Icon(Icons.email, size: 20),
-                            Text(" " + email, style: kSubtitleStyle),
-                          ],
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            GFButton(
-                              onPressed: () {},
-                              text: "Chat",
-                              color: GFColors.SUCCESS,
-                              icon: Icon(
-                                Icons.message,
-                                color: Colors.white,
-                                size: 15.0,
-                              ),
-                            ),
-                            SizedBox(width: 4.0),
-                            GFButton(
-                              onPressed: () {},
-                              text: "Call",
-                              color: GFColors.PRIMARY,
-                              icon: Icon(
-                                Icons.phone,
-                                color: Colors.white,
-                                size: 15.0,
-                              ),
-                            ),
-                          ],
-                        ),
                       ],
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 40),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  GFButton(
+                    onPressed: () {},
+                    text: "Chat",
+                    color: GFColors.SUCCESS,
+                    icon: Icon(
+                      Icons.message,
+                      color: Colors.white,
+                      size: 15.0,
+                    ),
+                  ),
+                  GFButton(
+                    onPressed: () {},
+                    text: "Mail",
+                    color: GFColors.SECONDARY,
+                    icon: Icon(
+                      Icons.mail,
+                      color: Colors.white,
+                      size: 15.0,
+                    ),
+                  ),
+                  GFButton(
+                    onPressed: () {},
+                    text: "Call",
+                    color: GFColors.PRIMARY,
+                    icon: Icon(
+                      Icons.phone,
+                      color: Colors.white,
+                      size: 15.0,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 30),
               ImageGrid(images: images),
-              SizedBox(height: 40),
+              SizedBox(height: 30),
               GFTypography(
                 text: 'Experience',
                 type: GFTypographyType.typo1,
