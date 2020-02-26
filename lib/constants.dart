@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getflutter/components/list_tile/gf_list_tile.dart';
+import 'package:ti_boulo/widgets/Tag.dart';
 
 // Colors
 const kMainColor = Color(0xFF6c63ff);
@@ -26,6 +27,21 @@ final List<String> images = [
   "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
 ];
 
+// Task
+List<Map> ktasks = [
+  {
+    'title': "Wall Painting",
+    'description':
+        "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
+    'date': "12/12/2020",
+    'location': "Reduit",
+    'imageUrl': "https://picsum.photos/250?image=9",
+    'price': 1200,
+    'tags': ["construction", "manual"],
+  }
+];
+
+// utils
 generateTilesFromExperience(List<String> t) {
   var experiences = <Widget>[];
   t.forEach((i) {
@@ -40,4 +56,16 @@ generateTilesFromExperience(List<String> t) {
     ));
   });
   return experiences;
+}
+
+generateTagsFromStrings(List<String> t) {
+  var tags = <Tag>[];
+  t.forEach((i) {
+    var tag = new Tag(
+      color: kMainColor,
+      title: i,
+    );
+    tags.add(tag);
+  });
+  return tags;
 }
