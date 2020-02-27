@@ -39,7 +39,8 @@ class CreateTask extends StatefulWidget {
 class _CreateTaskState extends State<CreateTask> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Theme(
+      data: ThemeData(accentColor: kMainColor, primaryColor: kMainColor),
       child: StepperBody(),
     );
   }
