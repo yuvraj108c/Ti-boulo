@@ -41,15 +41,6 @@ class MyDrawer extends StatelessWidget {
           ),
           Divider(),
           _createDrawerItem(
-              // Tasks created by the current user
-              icon: Icons.album,
-              text: 'View Task',
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.pushNamed(context, Routes.viewTask);
-              }),
-          Divider(),
-          _createDrawerItem(
               icon: Icons.face, text: 'Freelancers'), // List of freelancers
           _createDrawerItem(icon: Icons.chat, text: 'Chat'), // List of chats
           Divider(),

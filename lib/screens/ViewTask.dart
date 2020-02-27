@@ -5,18 +5,26 @@ import 'package:getflutter/getflutter.dart';
 import 'package:ti_boulo/utils/functions.dart';
 import 'package:ti_boulo/widgets/MyAppBar.dart';
 import 'package:ti_boulo/widgets/PriceTag.dart';
+import 'package:ti_boulo/widgets/TaskItem.dart';
 import '../constants.dart';
 
 class ViewTaskScreen extends StatefulWidget {
-  ViewTaskScreen({Key key}) : super(key: key);
+  final TaskItem task;
+  ViewTaskScreen({Key key, this.task}) : super(key: key);
 
   @override
   _ViewTaskScreenState createState() => _ViewTaskScreenState();
 }
 
 class _ViewTaskScreenState extends State<ViewTaskScreen> {
-  final Map task = ktasks[0];
   final iSize = 15.0;
+  TaskItem task;
+
+  @override
+  void initState() {
+    task = widget.task;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +43,7 @@ class _ViewTaskScreenState extends State<ViewTaskScreen> {
               Container(
                 height: sHeight * 1 / 3,
                 child: GFImageOverlay(
-                    image: NetworkImage(task["imageUrl"]),
+                    image: NetworkImage(task.imageUrl),
                     borderRadius: BorderRadius.circular(15.0)),
               ),
               Container(
@@ -48,7 +56,7 @@ class _ViewTaskScreenState extends State<ViewTaskScreen> {
                       height: 5.0,
                     ),
                     GFTypography(
-                      text: task["title"],
+                      text: task.title,
                       type: GFTypographyType.typo1,
                       showDivider: false,
                     ),
@@ -62,7 +70,7 @@ class _ViewTaskScreenState extends State<ViewTaskScreen> {
                               color: kMainColor,
                               size: iSize,
                             ),
-                            Text(" " + task['location']),
+                            Text(" " + task.location),
                           ],
                         ),
                         Row(
@@ -72,21 +80,21 @@ class _ViewTaskScreenState extends State<ViewTaskScreen> {
                               color: kMainColor,
                               size: iSize,
                             ),
-                            Text(" " + task['date']),
+                            Text(" " + task.date),
                           ],
                         ),
                         PriceTag(
-                          price: task['price'].toString(),
+                          price: task.price.toString(),
                         )
                       ],
                     ),
                     GFTypography(
-                      text: task["description"],
+                      text: task.description,
                       type: GFTypographyType.typo4,
                       showDivider: false,
                     ),
                     Row(
-                      children: generateTagsFromStrings(task['tags']),
+                      children: generateTagsFromStrings(task.tags),
                     ),
                     ButtonTheme(
                       padding: EdgeInsets.all(15.0),

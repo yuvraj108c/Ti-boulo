@@ -24,12 +24,14 @@ generateTaskTiles(List<Map> t) {
   var tasks = <TaskItem>[];
   t.forEach((i) {
     var task = new TaskItem(
+      id: i["id"],
       title: i["title"],
       description: i["description"],
       date: i["date"],
       price: i["price"],
       location: i["location"],
       tags: i["tags"],
+      imageUrl: i["imageUrl"],
     );
     tasks.add(task);
   });

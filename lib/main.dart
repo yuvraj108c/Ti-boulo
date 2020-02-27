@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         Routes.home: (context) => HomeScreen(),
         Routes.profile: (context) => ProfileScreen(),
         Routes.task: (context) => TaskScreen(),
-        Routes.viewTask: (context) => ViewTaskScreen(),
+        Routes.viewTask: (context) => ViewTaskScreen(task: (ModalRoute.of(context).settings.arguments as Map)["task"]),
         Routes.intro: (context) => IntroScreen(),
       },
     );
