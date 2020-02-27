@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.white,
       ),
-      initialRoute: '/intro',
+      initialRoute: '/home',
       routes: {
         Routes.home: (context) => HomeScreen(),
         Routes.profile: (context) => ProfileScreen(),
