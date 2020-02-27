@@ -5,6 +5,7 @@ import 'package:ti_boulo/screens/Task.dart';
 import 'screens/Profile.dart';
 import 'screens/Home.dart';
 import 'screens/ViewTask.dart';
+import 'screens/Auth.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,7 +16,9 @@ class MyApp extends StatelessWidget {
       title: 'Ti Boulo',
       theme: ThemeData(
         primaryColor: Colors.white,
+        
       ),
+      //initialRoute: '/intro',
       initialRoute: '/intro',
       routes: {
         Routes.home: (context) => HomeScreen(),
@@ -23,6 +26,7 @@ class MyApp extends StatelessWidget {
         Routes.task: (context) => TaskScreen(),
         Routes.viewTask: (context) => ViewTaskScreen(),
         Routes.intro: (context) => IntroScreen(),
+        Routes.auth: (context) => AuthScreen(),
       },
     );
   }
