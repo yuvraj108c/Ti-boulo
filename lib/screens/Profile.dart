@@ -20,7 +20,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: MyAppBar(
-        title: "Profile",
+        title: USERNAME,
         actions: <Widget>[IconButton(icon: Icon(Icons.edit), onPressed: () {})],
       ),
       body: SingleChildScrollView(
