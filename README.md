@@ -1,9 +1,3 @@
-Note: 
-1. README.md contains the same items as in this file but will render better
-2. Screenshots are in the folder Screenshots
-
----
-
 # Ti Boulo
 
 #### 1. Category: Poverty
