@@ -20,7 +20,7 @@ This application aims at curbing the rate of poverty by exploiting a potential m
 ## How it works
 
 1. Users can register themselves as either **freelancer** or **hirer**
-2. Users can upload details which are relevant to them - picture, bio, CV, ...
+2. Users can upload details which are relevant to them - picture, bio, CV, etc
 3. Users show interest in **categories**. When there are new tasks with categories relevant to a user, notifications can be displayed
 
 ### Hirer
@@ -52,10 +52,24 @@ The Mauritian Adult Audience is  targetted.
 
 #### 4. Platforms and technology used
 
-UI: Flutter
-Backend: MySql running on Huawei's Server or Firebase, depending Huawei's response
+ - **UI**: Flutter
+ - **Backend** : MySql running on Huawei's Server or Firebase, depending Huawei's response
 
---- 
+#### 5. Revenue Stream
+
+One of the following methods shall be used to generate income:
+1. A fraction of the task fee is charged from the hirer.
+2. The hirer has a limited number of tasks that he can advertise at one instances. An subscription fee shall be charged for posting additional tasks.
+3. A specific amount may be charged to the hirer to give priority to his posts so that they appear higher up in the results.
+
+#### 6. Cost Associated
+
+The cost of operating the _Ti-Boulo_ app is minimal and shall not neither hinder its development nor impact its maintainance during its lifetime.
+
+One of the following requirements are needed for the operation of the app:
+ 
+ - A dedicated web server and a dedicated database server
+ -  A cloud server (compute instance)
 
 #### Screenshots
 
