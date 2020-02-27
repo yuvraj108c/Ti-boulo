@@ -19,7 +19,7 @@ class _TaskScreenState extends State<TaskScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(title: " Create task"),
+      appBar: MyAppBar(title: "Create task"),
       body: Center(
         child: CreateTask(),
       ),
