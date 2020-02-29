@@ -53,11 +53,31 @@ class _EditProfileBodyState extends State<EditProfileBody> {
         child: Container(
           margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: sWidth / 14),
           child: Column(mainAxisSize: MainAxisSize.min, children: [
+            Stack(
+              children: <Widget>[
+                GFImageOverlay(
+                  borderRadius: BorderRadius.circular(75),
+                  height: 125,
+                  width: 125,
+                  image: NetworkImage(kprofile['imageUrl']),
+                ),
+                Positioned(
+                  top: 90,
+                  left: 90,
+                  child: GFIconButton(
+                    icon: Icon(Icons.photo_camera),
+                    onPressed: () {},
+                  ),
+                )
+              ],
+            ),
+
             // Name
             new TextFormField(
               maxLines: 1,
               decoration: new InputDecoration(
                 labelText: 'Name',
+                prefixIcon: Icon(Icons.people),
               ),
               controller: nameController,
             ),
@@ -66,6 +86,7 @@ class _EditProfileBodyState extends State<EditProfileBody> {
             new TextFormField(
               maxLines: 1,
               decoration: new InputDecoration(
+                prefixIcon: Icon(Icons.info),
                 labelText: 'About',
               ),
               controller: aboutController,
@@ -73,8 +94,10 @@ class _EditProfileBodyState extends State<EditProfileBody> {
             SizedBox(height: 10.0),
             // Email
             new TextFormField(
+              keyboardType: TextInputType.emailAddress,
               maxLines: 1,
               decoration: new InputDecoration(
+                prefixIcon: Icon(Icons.email),
                 labelText: 'Email',
               ),
               controller: emailController,
@@ -82,8 +105,10 @@ class _EditProfileBodyState extends State<EditProfileBody> {
             SizedBox(height: 10.0),
             // Phone
             new TextFormField(
+              keyboardType: TextInputType.phone,
               maxLines: 1,
               decoration: new InputDecoration(
+                prefixIcon: Icon(Icons.phone),
                 labelText: 'Phone',
               ),
               controller: phoneController,
@@ -96,6 +121,7 @@ class _EditProfileBodyState extends State<EditProfileBody> {
                   text: "Save",
                   color: kMainColor,
                   onPressed: () {
+                    FocusScope.of(context).unfocus();
                     showSnackBarMessage("Profile updated successfully");
                   },
                 ),
