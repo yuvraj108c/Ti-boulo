@@ -15,14 +15,21 @@ const kSubtitleStyle = TextStyle(
 const APIKEY = "AIzaSyAxiXZvMz-x1SEPcvVQntd7Xkzhf80aC74";
 
 // Profile
-final String about = "Wall painter";
-final String imageUrl =
-    "https://www.easy-profile.com/images/default-avatar.png";
-final String name = "John Doe";
-final String phone = "51231212";
-final String email = "john.doe@gmail.com";
-final List<String> experience = ["Painted wall ", "Constructed buildling"];
-final List<String> images = [
+Map kprofile = {
+  'name': "John Doe",
+  'about': "Wall painter",
+  'imageUrl': "https://www.easy-profile.com/images/default-avatar.png",
+  'phone': "51231212",
+  'email': "john.doe@gmail.com",
+  'experience': ["Painted wall ", "Constructed buildling"],
+  'images': [
+    "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+    "https://cdn.pixabay.com/photo/2019/12/12/13/42/castle-4690710_960_720.jpg",
+    "https://cdn.pixabay.com/photo/2015/07/28/20/55/tools-864983_960_720.jpg",
+    "https://cdn.pixabay.com/photo/2019/10/04/05/42/workshop-4524838_960_720.jpg",
+  ]
+};
+List<String> images = [
   "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
   "https://cdn.pixabay.com/photo/2019/12/12/13/42/castle-4690710_960_720.jpg",
   "https://cdn.pixabay.com/photo/2015/07/28/20/55/tools-864983_960_720.jpg",

@@ -5,6 +5,8 @@ import 'package:ti_boulo/utils/functions.dart';
 import 'package:ti_boulo/widgets/ImageGrid.dart';
 import 'package:ti_boulo/widgets/MyAppBar.dart';
 
+import '../routes.dart';
+
 class ProfileScreen extends StatefulWidget {
   ProfileScreen({Key key}) : super(key: key);
 
@@ -21,7 +23,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
       backgroundColor: Colors.white,
       appBar: MyAppBar(
         title: USERNAME,
-        actions: <Widget>[IconButton(icon: Icon(Icons.edit), onPressed: () {})],
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(Icons.edit),
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.editProfile);
+              })
+        ],
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -36,7 +44,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     borderRadius: BorderRadius.circular(75),
                     height: 125,
                     width: 125,
-                    image: NetworkImage(imageUrl),
+                    image: NetworkImage(kprofile['imageUrl']),
                   ),
                   Container(
                     margin: EdgeInsets.only(left: 15.0),
@@ -46,11 +54,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          name,
+                          kprofile['name'],
                           style: TextStyle(
                               fontSize: 30, fontWeight: FontWeight.w500),
                         ),
-                        Text(about, style: kSubtitleStyle),
+                        Text(kprofile['about'], style: kSubtitleStyle),
                       ],
                     ),
                   ),
@@ -93,7 +101,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ],
               ),
               SizedBox(height: 30),
-              ImageGrid(images: images),
+              ImageGrid(images: kprofile['images']),
               SizedBox(height: 30),
               GFTypography(
                 text: 'Experience',
@@ -101,7 +109,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 showDivider: false,
               ),
               SizedBox(height: 20.0),
-              ...generateTilesFromExperience(experience)
+              ...generateTilesFromExperience(kprofile['experience'])
             ],
           ),
         ),
