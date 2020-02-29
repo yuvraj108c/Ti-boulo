@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'dart:io';
 import 'package:getflutter/getflutter.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:ti_boulo/constants.dart';
 import 'package:ti_boulo/widgets/MyAppBar.dart';
 
@@ -28,6 +30,22 @@ class EditProfileBody extends StatefulWidget {
 }
 
 class _EditProfileBodyState extends State<EditProfileBody> {
+  File _image;
+
+  Future getImageFromCamera() async {
+    var image = await ImagePicker.pickImage(source: ImageSource.camera);
+    setState(() {
+      _image = image;
+    });
+  }
+
+  Future uploadImage() async {
+    var image = await ImagePicker.pickImage(source: ImageSource.gallery);
+    setState(() {
+      _image = image;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final sWidth = MediaQuery.of(context).size.width;
@@ -59,14 +77,44 @@ class _EditProfileBodyState extends State<EditProfileBody> {
                   borderRadius: BorderRadius.circular(75),
                   height: 125,
                   width: 125,
-                  image: NetworkImage(kprofile['imageUrl']),
+                  image: _image != null
+                      ? FileImage(_image)
+                      : NetworkImage(kprofile['imageUrl']),
                 ),
                 Positioned(
                   top: 90,
                   left: 90,
                   child: GFIconButton(
                     icon: Icon(Icons.photo_camera),
-                    onPressed: () {},
+                    onPressed: () {
+                      showModalBottomSheet(
+                          context: context,
+                          builder: (context) {
+                            return Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                ListTile(
+                                  leading: Icon(Icons.file_upload),
+                                  title: Text("Upload from device"),
+                                  onTap: () {
+                                    // Upload from device
+                                    Navigator.pop(context);
+                                    uploadImage();
+                                  },
+                                ),
+                                ListTile(
+                                  leading: Icon(Icons.photo_camera),
+                                  title: Text("Take picture"),
+                                  onTap: () {
+                                    // Take picture
+                                    Navigator.pop(context);
+                                    getImageFromCamera();
+                                  },
+                                )
+                              ],
+                            );
+                          });
+                    },
                   ),
                 )
               ],
