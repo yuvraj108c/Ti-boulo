@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:ti_boulo/constants.dart';
 
-import '../routes.dart';
+import '../../routes.dart';
 
 class IntroScreen extends StatelessWidget {
   @override

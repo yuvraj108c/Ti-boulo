@@ -6,8 +6,11 @@ import 'package:ti_boulo/utils/functions.dart';
 import 'package:ti_boulo/widgets/MyAppBar.dart';
 import 'package:ti_boulo/widgets/PriceTag.dart';
 import 'package:ti_boulo/widgets/TaskItem.dart';
-import '../constants.dart';
+import '../../constants.dart';
 
+/// View A Single task
+///
+/// takes a Task as parameter
 class ViewTaskScreen extends StatefulWidget {
   final TaskItem task;
   ViewTaskScreen({Key key, this.task}) : super(key: key);

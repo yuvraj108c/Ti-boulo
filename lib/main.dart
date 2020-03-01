@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ti_boulo/routes.dart';
 import 'package:ti_boulo/screens/EditProfile.dart';
-import 'package:ti_boulo/screens/Intro.dart';
-import 'package:ti_boulo/screens/CreateTask.dart';
-import 'package:ti_boulo/screens/Login.dart';
-import 'package:ti_boulo/screens/Register.dart';
-import 'package:ti_boulo/screens/Welcome.dart';
+import 'package:ti_boulo/screens/OnBoard/Intro.dart';
+import 'package:ti_boulo/screens/Task/CreateTask.dart';
+import 'package:ti_boulo/screens/OnBoard/Login.dart';
+import 'package:ti_boulo/screens/OnBoard/Register.dart';
+import 'package:ti_boulo/screens/OnBoard/Welcome.dart';
 import 'screens/Profile.dart';
 import 'screens/Home.dart';
-import 'screens/ViewTask.dart';
+import 'screens/Task/ViewTask.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    SharedPreferences.getInstance().then((p) => p.setString("usertype", "hirer"));
+
     return MaterialApp(
       title: 'Ti Boulo',
       theme: ThemeData(

@@ -6,8 +6,11 @@ import 'package:ti_boulo/utils/Validator.dart';
 import 'package:ti_boulo/widgets/MyAppBar.dart';
 import 'package:date_range_picker/date_range_picker.dart' as DateRagePicker;
 
-import '../constants.dart';
+import '../../constants.dart';
 
+/// Create Task
+/// 
+/// Allows Hirer to create a task
 class TaskScreen extends StatefulWidget {
   TaskScreen({Key key}) : super(key: key);
 

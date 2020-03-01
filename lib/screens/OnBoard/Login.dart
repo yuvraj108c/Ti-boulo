@@ -3,7 +3,7 @@ import 'package:getflutter/components/button/gf_button.dart';
 import 'package:getflutter/size/gf_size.dart';
 import 'package:ti_boulo/utils/Validator.dart';
 
-import '../constants.dart';
+import '../../constants.dart';
 
 class LoginScreen extends StatelessWidget {
   @override

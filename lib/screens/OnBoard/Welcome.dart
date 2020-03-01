@@ -4,7 +4,7 @@ import 'package:getflutter/components/button/gf_button.dart';
 import 'package:getflutter/getflutter.dart';
 import 'package:getflutter/size/gf_size.dart';
 import 'package:ti_boulo/constants.dart';
-import '../routes.dart';
+import '../../routes.dart';
 
 class WelcomeScreen extends StatefulWidget {
   WelcomeScreen({Key key}) : super(key: key);
