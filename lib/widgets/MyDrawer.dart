@@ -41,6 +41,14 @@ class MyDrawer extends StatelessWidget {
           ),
           Divider(),
           _createDrawerItem(
+              icon: Icons.verified_user,
+              text: 'Login / Register',
+              onTap: () {
+                Navigator.pushNamed(
+                    context, Routes.welcome); // Introduction Screen
+              }),
+          Divider(),
+          _createDrawerItem(
               icon: Icons.face, text: 'Freelancers'), // List of freelancers
           _createDrawerItem(icon: Icons.chat, text: 'Chat'), // List of chats
           Divider(),
