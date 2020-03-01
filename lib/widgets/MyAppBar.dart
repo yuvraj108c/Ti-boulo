@@ -9,7 +9,6 @@ class MyAppBar extends AppBar {
               style: TextStyle(color: Colors.black),
             ),
             centerTitle: true,
-            elevation: 0.0,
             backgroundColor: Colors.white,
             actions: actions);
 }
