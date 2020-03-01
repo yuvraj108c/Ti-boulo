@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
       initialRoute: Routes.home,
       routes: {
         Routes.home: (context) => HomeScreen(),
-        Routes.profile: (context) => ProfileScreen(),
         Routes.task: (context) => TaskScreen(),
         Routes.viewTask: (context) => ViewTaskScreen(
             task: (ModalRoute.of(context).settings.arguments as Map)["task"]),
@@ -30,6 +29,7 @@ class MyApp extends StatelessWidget {
         Routes.login: (context) => LoginScreen(),
         Routes.register: (context) => RegisterScreen(),
         Routes.welcome: (context) => WelcomeScreen(),
+        Routes.profile: (context) => ProfileScreen(),
       },
     );
   }
