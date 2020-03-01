@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ti_boulo/routes.dart';
 import 'package:ti_boulo/screens/Profile/EditProfile.dart';
 import 'package:ti_boulo/screens/OnBoard/Intro.dart';
@@ -16,8 +15,6 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
-    SharedPreferences.getInstance().then((p) => p.setString("usertype", "hirer"));
 
     return MaterialApp(
       title: 'Ti Boulo',
