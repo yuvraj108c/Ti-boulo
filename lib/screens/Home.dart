@@ -28,9 +28,9 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.symmetric(vertical: 10, horizontal: sWidth / 20),
-          height: sHeight * 2,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
             children: [
               Container(
                 margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 3),

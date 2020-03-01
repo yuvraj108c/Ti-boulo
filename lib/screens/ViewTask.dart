@@ -96,19 +96,12 @@ class _ViewTaskScreenState extends State<ViewTaskScreen> {
                     Row(
                       children: generateTagsFromStrings(task.tags),
                     ),
-                    ButtonTheme(
-                      padding: EdgeInsets.all(15.0),
-                      minWidth: double.infinity,
-                      buttonColor: kMainColor,
-                      child: RaisedButton(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(15.0),
-                        ),
+                    GFButton(
                         onPressed: () {},
-                        child: Text("Apply",
-                            style: TextStyle(color: Colors.white)),
-                      ),
-                    )
+                        color: kMainColor,
+                        text: "Apply",
+                        fullWidthButton: true,
+                        size: GFSize.LARGE),
                   ],
                 ),
               )
