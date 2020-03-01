@@ -36,9 +36,9 @@ class IntroScreen extends StatelessWidget {
           decoration: pageDecoration,
         ),
       ],
-      onDone: () => Navigator.pushReplacementNamed(context, Routes.home),
+      onDone: () => Navigator.pushReplacementNamed(context, Routes.welcome),
       onSkip: () => Navigator.pushReplacementNamed(
-          context, Routes.home), // You can override onSkip callback
+          context, Routes.welcome), // You can override onSkip callback
       showSkipButton: true,
       skipFlex: 0,
       nextFlex: 0,

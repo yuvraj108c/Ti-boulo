@@ -11,6 +11,9 @@ const kSubtitleStyle = TextStyle(
   color: Colors.black54,
 );
 
+const kAuthTextStyle =
+    TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0, letterSpacing: 1.5);
+
 // Location API Key
 const APIKEY = "AIzaSyAxiXZvMz-x1SEPcvVQntd7Xkzhf80aC74";
 
