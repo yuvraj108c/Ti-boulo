@@ -5,26 +5,31 @@ import 'package:ti_boulo/models/task.dart';
 import 'package:ti_boulo/utils/Validator.dart';
 import 'package:ti_boulo/widgets/MyAppBar.dart';
 import 'package:date_range_picker/date_range_picker.dart' as DateRagePicker;
+import 'package:ti_boulo/widgets/MyDrawer.dart';
 
 import '../../constants.dart';
 
 /// Create Task
-/// 
+///
 /// Allows Hirer to create a task
-class TaskScreen extends StatefulWidget {
-  TaskScreen({Key key}) : super(key: key);
+class CreateTaskScreen extends StatefulWidget {
+  CreateTaskScreen({Key key}) : super(key: key);
 
   @override
-  _TaskScreenState createState() => _TaskScreenState();
+  _CreateTaskScreenState createState() => _CreateTaskScreenState();
 }
 
-class _TaskScreenState extends State<TaskScreen> {
+class _CreateTaskScreenState extends State<CreateTaskScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(title: "Create task"),
+      appBar: MyAppBar(title: "Create Task"),
+      drawer: MyDrawer(),
       body: Center(
-        child: CreateTask(),
+        child: Container(
+          height: MediaQuery.of(context).size.height - kBottomBarHeight - 10,
+          child: CreateTask(),
+        ),
       ),
       // floatingActionButton: new FloatingActionButton.extended(
       //     onPressed: null, label: new Text("Save"), icon: Icon(Icons.save))
@@ -163,8 +168,8 @@ class _StepperBodyState extends State<StepperBody> {
                     onSaved: (String value) {
                       newTask.description = value;
                     },
-                    minLines: 3,
-                    maxLines: 5,
+                    minLines: 2,
+                    maxLines: 3,
                     validator: (value) =>
                         Validator.emptyValidator("Description ", value),
                     decoration: new InputDecoration(

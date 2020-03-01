@@ -4,8 +4,9 @@ import 'package:ti_boulo/constants.dart';
 import 'package:ti_boulo/utils/functions.dart';
 import 'package:ti_boulo/widgets/ImageGrid.dart';
 import 'package:ti_boulo/widgets/MyAppBar.dart';
+import 'package:ti_boulo/widgets/MyDrawer.dart';
 
-import '../routes.dart';
+import '../../routes.dart';
 
 class ProfileScreen extends StatefulWidget {
   ProfileScreen({Key key}) : super(key: key);
@@ -31,6 +32,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               })
         ],
       ),
+      drawer: MyDrawer(),
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: sWidth / 14),

@@ -1,9 +1,8 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:ti_boulo/screens/Profile.dart';
+import 'package:ti_boulo/screens/Profile/Profile.dart';
 import 'package:ti_boulo/screens/Task/CreateTask.dart';
 import 'package:ti_boulo/screens/Task/TaskList.dart';
-import 'package:ti_boulo/widgets/MyAppBar.dart';
 import 'package:ti_boulo/widgets/MyDrawer.dart';
 
 import '../constants.dart';
@@ -26,33 +25,28 @@ class _HomeScreenState extends State<HomeScreen>
     TabItem(icon: Icons.face, title: 'Freelancers'),
   ];
   final List<StatefulWidget> pages = [
-    CreateTask(),
+    CreateTaskScreen(),
     TaskList(),
     ProfileScreen()
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: MyAppBar(
-        title: "Home",
-      ),
-      body: DefaultTabController(
-        length: items.length,
-        initialIndex: 1,
-        child: Scaffold(
-          body: TabBarView(
-            children: pages.toList(growable: false),
-          ),
-          bottomNavigationBar: new ConvexAppBar(
+    return DefaultTabController(
+      length: items.length,
+      initialIndex: 1,
+      child: Scaffold(
+        body: TabBarView(
+          children: pages.toList(growable: false),
+        ),
+        bottomNavigationBar: new ConvexAppBar(
             items: items,
             backgroundColor: kMainColor,
             color: kMainBackgroundColor,
-          ),
-        ),
+            initialActiveIndex: 1),
+        backgroundColor: Color(0xFFF2F2F2),
+        drawer: MyDrawer(),
       ),
-      backgroundColor: Color(0xFFF2F2F2),
-      drawer: MyDrawer(),
     );
   }
 
