@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getflutter/components/list_tile/gf_list_tile.dart';
-import 'package:ti_boulo/widgets/Tag.dart';
-import 'package:ti_boulo/widgets/TaskItem.dart';
+import 'package:ti_boulo/screens/Task/Tag.dart';
+import 'package:ti_boulo/screens/Task/TaskItem.dart';
 import '../constants.dart';
 
 generateTilesFromExperience(List<String> t) {

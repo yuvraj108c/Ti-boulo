@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ti_boulo/constants.dart';
-import 'package:ti_boulo/widgets/PriceTag.dart';
 import 'package:ti_boulo/utils/functions.dart';
 
-import '../routes.dart';
+import '../../routes.dart';
+import 'PriceTag.dart';
 
 class TaskItem extends StatelessWidget {
   final String id;

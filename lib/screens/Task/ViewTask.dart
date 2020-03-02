@@ -4,9 +4,9 @@ import 'package:getflutter/components/typography/gf_typography.dart';
 import 'package:getflutter/getflutter.dart';
 import 'package:ti_boulo/utils/functions.dart';
 import 'package:ti_boulo/widgets/MyAppBar.dart';
-import 'package:ti_boulo/widgets/PriceTag.dart';
-import 'package:ti_boulo/widgets/TaskItem.dart';
 import '../../constants.dart';
+import 'PriceTag.dart';
+import 'TaskItem.dart';
 
 /// View A Single task
 ///
