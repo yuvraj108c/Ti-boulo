@@ -1,9 +1,9 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:ti_boulo/screens/Profile/Profile.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:ti_boulo/screens/Chat/ChatList.dart';
 import 'package:ti_boulo/screens/Task/CreateTask.dart';
 import 'package:ti_boulo/screens/Task/TaskList.dart';
-import 'package:ti_boulo/widgets/MyDrawer.dart';
 
 import '../constants.dart';
 
@@ -22,13 +22,25 @@ class _HomeScreenState extends State<HomeScreen>
   final List<TabItem> items = [
     TabItem(icon: Icons.add, title: 'Add'),
     TabItem(icon: Icons.home, title: 'Home'),
-    TabItem(icon: Icons.face, title: 'Freelancers'),
+    TabItem(icon: Icons.chat, title: 'Chat'),
   ];
   final List<StatefulWidget> pages = [
     CreateTaskScreen(),
     TaskList(),
-    ProfileScreen()
+    ChatListScreen()
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    // housekeeping();
+  }
+
+  void housekeeping() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    sharedPreferences.setString("username", "sam");
+    sharedPreferences.setString("usertype", "freelancer");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,21 +57,8 @@ class _HomeScreenState extends State<HomeScreen>
             color: kMainBackgroundColor,
             initialActiveIndex: 1),
         backgroundColor: Color(0xFFF2F2F2),
-        drawer: MyDrawer(),
       ),
     );
   }
 
-  Container tabContent(TabItem data, Color color) {
-    return Container(
-        height: kBottomBarHeight,
-        padding: EdgeInsets.only(bottom: 2),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: <Widget>[
-            Icon(data.icon, color: color),
-            Text(data.title, style: TextStyle(color: color))
-          ],
-        ));
-  }
 }

@@ -40,7 +40,6 @@ List<String> images = [
 ];
 
 // General Hardcoded Values
-const String USERNAME = "John";
 
 const double kBottomBarHeight = 48;
 

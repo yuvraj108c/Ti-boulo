@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "774317868721",
+    "firebase_url": "https://ti-boulo.firebaseio.com",
+    "project_id": "ti-boulo",
+    "storage_bucket": "ti-boulo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774317868721:android:1337f82b1a084805888490",
+        "android_client_info": {
+          "package_name": "com.example.ti_boulo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "774317868721-5m64uoaes9ik22ufqb9fekvb3br627kc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ti_boulo",
+            "certificate_hash": "6ff37b040a231c1f18fc3dcbe612ab720998d775"
+          }
+        },
+        {
+          "client_id": "774317868721-hcc77fcqb33p5i5sijp7rdf251vcr439.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnHDvKgiV6NapoUKnlBq6m2Bsl6FT_nSk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "774317868721-hcc77fcqb33p5i5sijp7rdf251vcr439.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

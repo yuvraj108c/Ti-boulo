@@ -35,7 +35,6 @@ class LoginBodyState extends State<LoginBody> {
   Widget build(BuildContext context) {
     final paddingVertical = MediaQuery.of(context).size.width * 0.08;
     final paddingTop = MediaQuery.of(context).size.height * 0.05;
-    final sHeight = MediaQuery.of(context).size.height;
     return Theme(
       data: ThemeData(accentColor: kMainColor, primaryColor: kMainColor),
       child: SingleChildScrollView(

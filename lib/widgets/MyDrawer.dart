@@ -50,7 +50,13 @@ class MyDrawer extends StatelessWidget {
           Divider(),
           _createDrawerItem(
               icon: Icons.face, text: 'Freelancers'), // List of freelancers
-          _createDrawerItem(icon: Icons.chat, text: 'Chat'), // List of chats
+          _createDrawerItem(
+              icon: Icons.chat,
+              text: 'Chat',
+              onTap: () {
+                Navigator.pushNamed(
+                    context, Routes.chat); // Introduction Screen
+              }), // List of chats
           Divider(),
           _createDrawerItem(
               icon: Icons.stars,
@@ -59,9 +65,10 @@ class MyDrawer extends StatelessWidget {
                 Navigator.pushNamed(
                     context, Routes.intro); // Introduction Screen
               }),
-
           _createDrawerItem(
-              icon: Icons.settings, text: 'Settings'), // App Settings
+            icon: Icons.settings,
+            text: 'Settings',
+          ), // App Settings
           Divider(),
           ListTile(
             title: Text(

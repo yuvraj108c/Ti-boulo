@@ -23,7 +23,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: MyAppBar(
-        title: USERNAME,
+        title: kprofile["name"],
         actions: <Widget>[
           IconButton(
               icon: Icon(Icons.edit),

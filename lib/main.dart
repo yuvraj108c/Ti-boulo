@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ti_boulo/routes.dart';
+import 'package:ti_boulo/screens/Chat/ChatList.dart';
+import 'package:ti_boulo/screens/Chat/DashChat.dart';
 import 'package:ti_boulo/screens/Profile/EditProfile.dart';
 import 'package:ti_boulo/screens/OnBoard/Intro.dart';
 import 'package:ti_boulo/screens/Task/CreateTask.dart';
@@ -33,6 +35,8 @@ class MyApp extends StatelessWidget {
         Routes.login: (context) => LoginScreen(),
         Routes.register: (context) => RegisterScreen(),
         Routes.welcome: (context) => WelcomeScreen(),
+        Routes.chat: (context) => ChatListScreen(),
+        Routes.dash: (context) => DashChatScreen(args: (ModalRoute.of(context).settings.arguments as Map)["args"]),
       },
     );
   }
