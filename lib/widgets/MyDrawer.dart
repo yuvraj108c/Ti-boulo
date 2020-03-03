@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ti_boulo/screens/OnBoard/AuthFunctions.dart';
 
 import '../routes.dart';
 
@@ -23,6 +24,13 @@ class MyDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
                 Navigator.pushNamed(context, Routes.profile);
+              }),
+          _createDrawerItem(
+              icon: Icons.exit_to_app,
+              text: 'Logout',
+              onTap: () {
+                Navigator.pop(context);
+                logOut(context);
               }),
           Divider(),
           _createDrawerItem(
