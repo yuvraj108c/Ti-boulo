@@ -15,15 +15,13 @@ class MyDrawer extends StatelessWidget {
               icon: Icons.home,
               text: 'Home',
               onTap: () {
-                Navigator.pop(context);
-                Navigator.pushReplacementNamed(context, Routes.home);
+                Navigator.popAndPushNamed(context, Routes.home);
               }),
           _createDrawerItem(
               icon: Icons.edit,
               text: 'My Profile',
               onTap: () {
-                Navigator.pop(context);
-                Navigator.pushNamed(context, Routes.profile);
+                Navigator.popAndPushNamed(context, Routes.profile);
               }),
           _createDrawerItem(
               icon: Icons.exit_to_app,
@@ -37,8 +35,7 @@ class MyDrawer extends StatelessWidget {
               icon: Icons.add,
               text: 'Create Task',
               onTap: () {
-                Navigator.pop(context);
-                Navigator.pushNamed(context, Routes.task);
+                Navigator.popAndPushNamed(context, Routes.task);
               }),
           _createDrawerItem(
             // Tasks created by the current user
@@ -53,19 +50,26 @@ class MyDrawer extends StatelessWidget {
               text: 'Login / Register',
               onTap: () {
                 Navigator.pushNamed(
-                    context, Routes.welcome); // Introduction Screen
+                  context,
+                  Routes.welcome,
+                ); // Introduction Screen
               }),
           Divider(),
           _createDrawerItem(
               icon: Icons.face, text: 'Freelancers'), // List of freelancers
-          _createDrawerItem(icon: Icons.chat, text: 'Chat'), // List of chats
+          _createDrawerItem(
+            icon: Icons.chat,
+            text: 'Chat',
+          ), // List of chats
           Divider(),
           _createDrawerItem(
               icon: Icons.stars,
               text: 'Intro',
               onTap: () {
                 Navigator.pushNamed(
-                    context, Routes.intro); // Introduction Screen
+                  context,
+                  Routes.intro,
+                ); // Introduction Screen
               }),
 
           _createDrawerItem(

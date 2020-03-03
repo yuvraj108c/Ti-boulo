@@ -26,7 +26,7 @@ void loginUser(BuildContext ctx, String email, String password) async {
       var u = json.decode(dec["response"])["user"];
       print("$email: ${u["type"]}");
       saveLoggedIn(email, u["type"])
-          .then((_) => Navigator.pushNamed(ctx, Routes.home));
+          .then((_) => Navigator.popAndPushNamed(ctx, Routes.home));
     } else {
       showErrorSnackbar(ctx);
     }
@@ -48,13 +48,17 @@ void showErrorSnackbar(ctx) => Scaffold.of(ctx).showSnackBar(
 Future<void> checkLoggedIn(context) async {
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   bool loggedIn = sharedPreferences.getBool("isLoggedIn") ?? false;
-  Navigator.pushReplacementNamed(context, loggedIn ? Routes.home : Routes.intro) ;
+  Navigator.pushReplacementNamed(
+    context,
+    loggedIn ? Routes.home : Routes.intro,
+  );
 }
+
 /// Utility function to log out user
 Future<void> logOut(context) async {
-  SharedPreferences sharedPreferences = await SharedPreferences.getInstance();  
+  SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   sharedPreferences.setBool("isLoggedIn", false);
-  Navigator.pushReplacementNamed(context, Routes.intro) ;
+  Navigator.pushReplacementNamed(context, Routes.intro);
 }
 
 /// Save user details when logging in
@@ -83,6 +87,7 @@ void registerUser(BuildContext ctx, User user) async {
 
     int status = json.decode(loginResponse.data)["statuscode"];
     print("status: $status");
+    // TODO: pop first then push replacement
     // if (status == 1) {
     //   Navigator.pushNamed(ctx, Routes.home);
     // } else {
