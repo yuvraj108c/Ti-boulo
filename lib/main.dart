@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ti_boulo/routes.dart';
+import 'package:ti_boulo/screens/Dashboard.dart';
 import 'package:ti_boulo/screens/Profile/EditProfile.dart';
 import 'package:ti_boulo/screens/OnBoard/Intro.dart';
 import 'package:ti_boulo/screens/Task/CreateTask.dart';
@@ -15,13 +16,12 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       title: 'Ti Boulo',
       theme: ThemeData(
         primaryColor: Colors.white,
       ),
-      initialRoute: Routes.home,
+      initialRoute: Routes.dashboard,
       routes: {
         Routes.home: (context) => HomeScreen(),
         Routes.profile: (context) => ProfileScreen(),
@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
         Routes.login: (context) => LoginScreen(),
         Routes.register: (context) => RegisterScreen(),
         Routes.welcome: (context) => WelcomeScreen(),
+        Routes.dashboard: (context) => DashboardScreen(),
       },
     );
   }
