@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ti_boulo/widgets/MyAppBar.dart';
+import 'package:ti_boulo/widgets/MyCalendar.dart';
 
 class DashboardScreen extends StatefulWidget {
   @override
@@ -15,16 +16,21 @@ class _DashboardScreenState extends State<DashboardScreen> {
       appBar: MyAppBar(
         title: "Dashboard",
       ),
-      body: MyDashboardBody(),
+      body: MyDashboard(),
     );
   }
 }
 
-class MyDashboardBody extends StatelessWidget {
+class MyDashboard extends StatelessWidget {
+  final Map<DateTime, List> _events = {
+    DateTime(2020, 3, 1): ['New Year\'s Day'],
+    DateTime(2020, 3, 6): ['Epiphany'],
+  };
+
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("Dashboard"),
+    return MyCalendar(
+      events: _events,
     );
   }
 }
