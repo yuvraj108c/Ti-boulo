@@ -4,6 +4,7 @@ import 'package:getflutter/size/gf_size.dart';
 import 'package:ti_boulo/utils/Validator.dart';
 
 import '../../constants.dart';
+import 'AuthFunctions.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -82,16 +83,21 @@ class LoginBodyState extends State<LoginBody> {
                   decoration: InputDecoration(
                       labelStyle: TextStyle(color: Colors.black38),
                       labelText: "Password"),
-                  validator: (value) =>
-                      Validator.emptyValidator("Password", value),
+                  validator: (value) => Validator.emptyValidator(
+                    "Password",
+                    value,
+                  ),
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.08),
                 GFButton(
                     onPressed: () {
                       FocusScope.of(context).unfocus();
                       if (_formKey.currentState.validate()) {
-                        Scaffold.of(context).showSnackBar(
-                            SnackBar(content: Text('Logging in')));
+                        loginUser(
+                          context,
+                          usernameController.text,
+                          passwordController.text,
+                        );
                       }
                     },
                     color: kMainColor,

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+// Server constants
+const kURL = "http://unchain.ml:85/api/routes";
+
 // Colors
 const kMainColor = Color(0xFF6c63ff);
 const kMainColor2 = Color(0xFFFFD88D);
