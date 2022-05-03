@@ -69,36 +69,47 @@ The cost of operating the _Ti-Boulo_ app is minimal and shall not neither hinder
 One of the following requirements are needed for the operation of the app:
  
  - A dedicated web server and a dedicated database server
- -  A cloud server (compute instance)
+ - A cloud server (compute instance)
+
+#### 7. Team Members
+- Isfaaq Goomany
+- Yuvraj Seegolam
 
 #### Screenshots
 
 ##### Onboarding/Intro
 
-1. ![Intro](Screenshots/Intro1.jpg)
-2. ![Intro](Screenshots/Intro2.jpg)
-3. ![Intro](Screenshots/Intro3.jpg)
+<div float="left">
+<img src="Screenshots/Intro1.jpg" height="500" />
+<img src="Screenshots/Intro2.jpg" height="500" />
+<img src="Screenshots/Intro3.jpg" height="500" />
+</div>
+
 
 ##### HomePage
 
-1. ![HomePage](Screenshots/HomePage.jpg)
+<img src="Screenshots/HomePage.jpg" height="500" />
 
 ##### View Task
 
-1. ![ViewTask](Screenshots/ViewTask.jpg)
+<img src="Screenshots/ViewTask.jpg" height="500" />
 
 ##### My Profile
 
-1. ![MyProfile](Screenshots/MyProfile.jpg)
+<img src="Screenshots/MyProfile.jpg" height="500" />
 
 ##### Create Task
 
-* ![Intro](Screenshots/CreateTask-Details.jpg)
-* ![Intro](Screenshots/CreateTask-Categories.jpg)
-* ![Intro](Screenshots/CreateTask-Categories1.jpg)
-* ![Intro](Screenshots/CreateTask-Date.jpg)
-* ![Intro](Screenshots/CreateTask-DateChoosing.jpg)
-* ![Intro](Screenshots/CreateTask-DateSelected.jpg)
-* ![Intro](Screenshots/CreateTask-Location.jpg)
-* ![Intro](Screenshots/CreateTask-LocationChoosing.jpg)
-* ![Intro](Screenshots/CreateTask-LocationSelected.jpg)
+<div float="left"> 
+<img src="Screenshots/CreateTask-Details.jpg" height="500" />
+<img src="Screenshots/CreateTask-Categories.jpg" height="500" />
+<img src="Screenshots/CreateTask-Categories1.jpg" height="500" />
+<img src="Screenshots/CreateTask-Date.jpg" height="500" />
+<img src="Screenshots/CreateTask-DateChoosing.jpg" height="500" />
+<img src="Screenshots/CreateTask-DateSelected.jpg" height="500" />
+<img src="Screenshots/CreateTask-Location.jpg" height="500" />
+<img src="Screenshots/CreateTask-LocationChoosing.jpg" height="500" />
+<img src="Screenshots/CreateTask-LocationSelected.jpg" height="500" />
+</div>
+
+
